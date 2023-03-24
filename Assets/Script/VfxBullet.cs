@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class VfxBullet : MonoBehaviour
@@ -20,7 +19,6 @@ public class VfxBullet : MonoBehaviour
     
     [Space]
     [Header("Damages")]
-    public int explosionDamage;
     public float explosionRange;
     public float explosionForce;
 
@@ -58,17 +56,11 @@ public class VfxBullet : MonoBehaviour
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, Enemies);
         for (int i = 0; i < enemies.Length; i++)
         {
-            
-
-            
-            ///enemies[i].GetComponent<ShootingAi>().TakeDamage(explosionDamage);
-
             //Add explosion force (if enemy has a rigidbody)
             if (enemies[i].GetComponent<Rigidbody>())
                 enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
         }
 
-        
         Invoke("Delay", 0.05f);
     }
     private void Delay()
@@ -98,11 +90,11 @@ public class VfxBullet : MonoBehaviour
         //Assign material to collider
         GetComponent<SphereCollider>().material = physics_mat;
 
-        //Set gravity
+        
         rb.useGravity = useGravity;
     }
 
-    /// Just to visualize the explosion range
+  
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

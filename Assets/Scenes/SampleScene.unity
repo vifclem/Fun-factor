@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8748090232340410844, guid: 53db46aafe9e44b41a42e720903f199a, type: 3}
-  shootForce: 200
+  shootForce: 50
   upwardForce: 0
   reloadAudioSource: {fileID: 0}
   timeBetweenShooting: 0.1
