@@ -31,7 +31,9 @@ public class VfxBullet : MonoBehaviour
 
     int collisions;
     PhysicMaterial physics_mat;
+    
 
+   
     private void Start()
     {
         Setup();

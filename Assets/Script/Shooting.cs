@@ -124,11 +124,7 @@ public class Shooting : MonoBehaviour
         
        if (ShootVFX != null)
          Instantiate(ShootVFX, attackPoint.position, Quaternion.identity);
-        
-
-       //Delay le destroy de la smoke
-        //Invoke("Delay", 2f);
-
+     
         bulletsLeft--;
         bulletsShot++;
 
@@ -139,20 +135,17 @@ public class Shooting : MonoBehaviour
         }
         if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
             Invoke("Shoot", timeBetweenShots);
+        
     }
 
-    //Detruire al smok pour pas faire crash le build si on shoot bcp de fois
-    //private void Delay()
-    //{
-        //Destroy(ShootVFX);
-    //}
+   
+   
     private void ResetShot()
     {
-        
         readyToShoot = true;
         allowInvoke = true;
     }
-
+    
     private void Reload()
     {
         reloading = true;
