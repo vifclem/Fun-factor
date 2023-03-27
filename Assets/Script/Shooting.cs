@@ -31,6 +31,7 @@ public class Shooting : MonoBehaviour
     [Space]
     [Header("ShootVfx")]
     public GameObject ShootVFX;
+   
 
     [Space]
     [Header("ShootingAnim")]
@@ -41,16 +42,21 @@ public class Shooting : MonoBehaviour
     [Header("Debug")]
     public bool allowInvoke = true;
 
+    public static Shooting instance;
+
     private void Awake()
     {
-        
+        instance = this;
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        
+
     }
 
     private void Update()
     {
         MyInput();
+        
 
     }
     private void MyInput()
@@ -117,7 +123,11 @@ public class Shooting : MonoBehaviour
 
         
        if (ShootVFX != null)
-            Instantiate(ShootVFX, attackPoint.position, Quaternion.identity);
+         Instantiate(ShootVFX, attackPoint.position, Quaternion.identity);
+        
+
+       //Delay le destroy de la smoke
+        //Invoke("Delay", 2f);
 
         bulletsLeft--;
         bulletsShot++;
@@ -130,6 +140,12 @@ public class Shooting : MonoBehaviour
         if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
             Invoke("Shoot", timeBetweenShots);
     }
+
+    //Detruire al smok pour pas faire crash le build si on shoot bcp de fois
+    //private void Delay()
+    //{
+        //Destroy(ShootVFX);
+    //}
     private void ResetShot()
     {
         

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4426206747036846}
   - component: {fileID: 198897649759126038}
   - component: {fileID: 199571606667392342}
+  - component: {fileID: 8682509899528043076}
   m_Layer: 0
   m_Name: RibbonSmoke
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891972527774278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23, y: 2.02, z: 10.48}
+  m_LocalPosition: {x: 17.362576, y: 4.1544056, z: 5.407856}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4863,3 +4864,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8682509899528043076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891972527774278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdceee0bde6bb24cb00e62aef73a09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -56,7 +56,7 @@ public class VfxBullet : MonoBehaviour
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, Enemies);
         for (int i = 0; i < enemies.Length; i++)
         {
-            //Add explosion force (if enemy has a rigidbody)
+            //Add explosion force 
             if (enemies[i].GetComponent<Rigidbody>())
                 enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
         }
@@ -73,7 +73,7 @@ public class VfxBullet : MonoBehaviour
         //Don't count collisions with other bullets
         if (collision.collider.CompareTag("Bullet")) return;
 
-        //Count up collisions
+        
         collisions++;
 
         //Explode if bullet hits an enemy directly and explodeOnTouch is activated
@@ -82,12 +82,12 @@ public class VfxBullet : MonoBehaviour
 
     private void Setup()
     {
-        //Create a new Physic material
+        
         physics_mat = new PhysicMaterial();
         physics_mat.bounciness = bounciness;
         physics_mat.frictionCombine = PhysicMaterialCombine.Minimum;
         physics_mat.bounceCombine = PhysicMaterialCombine.Maximum;
-        //Assign material to collider
+       
         GetComponent<SphereCollider>().material = physics_mat;
 
         
