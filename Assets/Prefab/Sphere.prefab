@@ -134,6 +134,7 @@ MonoBehaviour:
   Enemies:
     serializedVersion: 2
     m_Bits: 8
+  cubeFire: {fileID: 1000010823978654, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
   bounciness: 0
   useGravity: 1
   explosionRange: 10

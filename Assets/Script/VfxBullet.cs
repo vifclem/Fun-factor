@@ -8,6 +8,7 @@ public class VfxBullet : MonoBehaviour
     public Rigidbody rb;
     public GameObject explosion;
     public LayerMask Enemies;
+    public GameObject cubeFire;
 
     
     [Space]
@@ -31,6 +32,8 @@ public class VfxBullet : MonoBehaviour
 
     int collisions;
     PhysicMaterial physics_mat;
+
+    
     
 
    
@@ -52,7 +55,11 @@ public class VfxBullet : MonoBehaviour
     private void Explode()
     {
         //Instantiate explosion
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            //Instantiate(cubeFire, transform.position, Quaternion.identity);
+        }
 
         //Check des ennemies
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, Enemies);
