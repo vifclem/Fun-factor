@@ -134,11 +134,11 @@ MonoBehaviour:
   Enemies:
     serializedVersion: 2
     m_Bits: 8
-  bounciness: 0.545
+  bounciness: 0
   useGravity: 1
-  explosionRange: 0.5
-  explosionForce: 0
-  maxCollisions: 1
+  explosionRange: 10
+  explosionForce: 25
+  maxCollisions: 0
   maxLifetime: 4
   explodeOnTouch: 1
 --- !u!96 &1400082629477537958
