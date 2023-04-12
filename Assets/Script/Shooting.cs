@@ -35,7 +35,7 @@ public class Shooting : MonoBehaviour
 
     [Space]
     [Header("Display")]
-    public TextMeshPro display;
+    public TextMeshProUGUI display;
    
 
     [Space]

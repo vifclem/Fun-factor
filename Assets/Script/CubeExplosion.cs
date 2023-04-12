@@ -20,9 +20,7 @@ public class CubeExplosion : MonoBehaviour
 
     void Explosion()
     {
-
-
-        
+        Instantiate(explosion, transform.position, Quaternion.identity);
 
     }
     void Delay()
@@ -34,8 +32,10 @@ public class CubeExplosion : MonoBehaviour
     {
         if (other.gameObject.tag == "ground")
         {
-            //Instantiate(gameObject);
+            Explosion();
             Debug.Log("ha");
         }
+
+        Invoke("Delay", 0.1f);
     }
 }
