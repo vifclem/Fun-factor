@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 public class Shooting : MonoBehaviour
 {
    
@@ -31,6 +32,10 @@ public class Shooting : MonoBehaviour
     [Space]
     [Header("ShootVfx")]
     public GameObject ShootVFX;
+
+    [Space]
+    [Header("Display")]
+    public TextMeshPro display;
    
 
     [Space]
@@ -57,6 +62,10 @@ public class Shooting : MonoBehaviour
     {
         MyInput();
         
+        if(display != null)
+        {
+            display.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
+        }
 
     }
     private void MyInput()
