@@ -5,17 +5,15 @@ using TMPro;
 public class CubeExplosion : MonoBehaviour
 {
     public GameObject explosion;
-    
-   
+
+    public static CubeExplosion instance;
 
 
-   
-    void Start()
+    private void Awake()
     {
-        
+        instance = this;
     }
 
-    
     void Update()
     {
         
@@ -24,6 +22,7 @@ public class CubeExplosion : MonoBehaviour
     void Explosion()
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
+        
 
     }
     void Delay()
@@ -38,7 +37,8 @@ public class CubeExplosion : MonoBehaviour
         if (other.gameObject.tag == "ground")
         {
             Explosion();
-            //Display();
+            PointDisplay.instance.AddPoints();
+            PointDisplay.instance.PointCount();
             Debug.Log("ha");
             
         }
