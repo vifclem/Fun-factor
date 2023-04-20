@@ -1,9 +1,12 @@
 
 using UnityEngine;
+using TMPro;
 
 public class CubeExplosion : MonoBehaviour
 {
     public GameObject explosion;
+    
+   
 
 
    
@@ -25,7 +28,9 @@ public class CubeExplosion : MonoBehaviour
     }
     void Delay()
     {
+        
         Destroy(gameObject);
+        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -33,9 +38,20 @@ public class CubeExplosion : MonoBehaviour
         if (other.gameObject.tag == "ground")
         {
             Explosion();
+            //Display();
             Debug.Log("ha");
+            
         }
 
+       
         Invoke("Delay", 0.1f);
+       
     }
+
+
+   
+
+
+
+
 }

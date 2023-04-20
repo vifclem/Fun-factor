@@ -4895,9 +4895,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4e78c7538f5b6094a9c9f37faeda197f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.621
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14489,7 +14489,7 @@ GameObject:
   - component: {fileID: 949445328484710083}
   - component: {fileID: 2096861869693871156}
   m_Layer: 0
-  m_Name: BigExplosionEffect
+  m_Name: incredible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
