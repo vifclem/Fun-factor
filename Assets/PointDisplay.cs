@@ -8,8 +8,17 @@ public class PointDisplay : MonoBehaviour
     public static PointDisplay instance;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI scoreInTime;
+    public TextMeshProUGUI mainDisplay;
+    public TextMeshProUGUI mainDisplay2;
+    //public GameObject explosion;
+    //public Transform explo1;
+
+
+
     int score = 0;
-    int scoreIn = 0;
+    static int scoreIn = 0;
+    int finalScore = 22;
+
     private void Awake()
     {
         instance = this;
@@ -19,6 +28,11 @@ public class PointDisplay : MonoBehaviour
     {
         scoreText.text =  "POINTS : " + score.ToString();
         scoreInTime.text = " + " + scoreIn.ToString();
+        mainDisplay.text = "WOWOW C'INCROYABLE TU AS FAIT : " + finalScore.ToString() + " POINTS !!!";
+        mainDisplay.enabled = false;
+        mainDisplay2.enabled = false;
+
+
     }
 
     // Update is called once per frame
@@ -30,7 +44,7 @@ public class PointDisplay : MonoBehaviour
     public void AddPoints()
     {
         
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 1; i++)
         {
             score += score + 1 * 2;
         }
@@ -43,5 +57,17 @@ public class PointDisplay : MonoBehaviour
     {
         scoreIn += 1;
         scoreInTime.text = " + " + scoreIn.ToString();
+    }
+
+    public void FinalDisplay()
+    {
+        if(scoreIn == 2)
+        {
+            Debug.Log("ahahah");
+            mainDisplay.enabled = true;
+            FinalExplosion.instance.FinaleExplosion();
+
+
+        }
     }
 }

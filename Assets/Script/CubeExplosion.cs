@@ -39,6 +39,7 @@ public class CubeExplosion : MonoBehaviour
             Explosion();
             PointDisplay.instance.AddPoints();
             PointDisplay.instance.PointCount();
+            PointDisplay.instance.FinalDisplay();
             Debug.Log("ha");
             
         }
