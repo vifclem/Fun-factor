@@ -28,7 +28,8 @@ public class PointDisplay : MonoBehaviour
     {
         scoreText.text =  "POINTS : " + score.ToString();
         scoreInTime.text = " + " + scoreIn.ToString();
-        mainDisplay.text = "WOWOW C'INCROYABLE TU AS FAIT : " + finalScore.ToString() + " POINTS !!!";
+        mainDisplay.text = " TU AS FAIT : " + finalScore.ToString() + " POINTS !!";
+        mainDisplay2.text = "Tu est vraiment trop fort";
         mainDisplay.enabled = false;
         mainDisplay2.enabled = false;
 
@@ -61,10 +62,11 @@ public class PointDisplay : MonoBehaviour
 
     public void FinalDisplay()
     {
-        if(scoreIn == 2)
+        if(scoreIn == 22)
         {
             Debug.Log("ahahah");
             mainDisplay.enabled = true;
+            mainDisplay2.enabled = true;
             FinalExplosion.instance.FinaleExplosion();
 
 
