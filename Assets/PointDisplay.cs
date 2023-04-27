@@ -66,7 +66,7 @@ public class PointDisplay : MonoBehaviour
         {
             Debug.Log("ahahah");
             mainDisplay.enabled = true;
-            mainDisplay2.enabled = true;
+            
             FinalExplosion.instance.FinaleExplosion();
 
 
