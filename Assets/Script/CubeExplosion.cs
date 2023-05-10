@@ -42,6 +42,7 @@ public class CubeExplosion : MonoBehaviour
             PointDisplay.instance.FinalDisplay();
             Debug.Log("ha");
             
+            
         }
 
        

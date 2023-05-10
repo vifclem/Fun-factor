@@ -10,6 +10,10 @@ public class PointDisplay : MonoBehaviour
     public TextMeshProUGUI scoreInTime;
     public TextMeshProUGUI mainDisplay;
     public TextMeshProUGUI mainDisplay2;
+    public GameObject save;
+    public GameObject load;
+    public bool pActive = false;
+
     //public GameObject explosion;
     //public Transform explo1;
 
@@ -39,7 +43,19 @@ public class PointDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            pActive = true;
+            save.SetActive(true);
+            load.SetActive(true);
+        }
+        if(Input.GetKeyDown(KeyCode.P) && !pActive)
+        {
+           
+            save.SetActive(false);
+            load.SetActive(false);
+        }
+
     }
 
     public void AddPoints()
