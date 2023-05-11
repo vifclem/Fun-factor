@@ -12,6 +12,7 @@ public class PointDisplay : MonoBehaviour
     public TextMeshProUGUI mainDisplay2;
     public GameObject save;
     public GameObject load;
+    public GameObject newLevel;
     public bool pActive = false;
     //public Shooting Shooting;
 
@@ -50,6 +51,7 @@ public class PointDisplay : MonoBehaviour
             Cursor.visible = true;
             save.SetActive(true);
             load.SetActive(true);
+            newLevel.SetActive(true);
         }
         else if(Input.GetKeyDown(KeyCode.P) && !pActive)
         {
@@ -58,6 +60,7 @@ public class PointDisplay : MonoBehaviour
            Cursor.visible = false;
             save.SetActive(false);
             load.SetActive(false);
+            newLevel.SetActive(false);
         }
 
     }

@@ -24,6 +24,7 @@ public class SaveData
             pointDisplay.score = score;
             pointDisplay.scoreIn = scoreIn;
             pointDisplay.UpdateDisplay();
+            
         }
     }
 
@@ -35,6 +36,14 @@ public class SaveData
             score = pointDisplay.score;
             scoreIn = pointDisplay.scoreIn;
         }
+    }
+
+    public void NewScene()
+    {
+        pointDisplay.score = 0;
+        pointDisplay.scoreIn = 0;
+        pointDisplay.UpdateDisplay();
+
     }
 
 

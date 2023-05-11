@@ -50,4 +50,9 @@ public class SaveAndLoad : MonoBehaviour
         }
     }
 
+    public void NewLoad()
+    {
+        saveData.NewScene();
+    }
+
 }
