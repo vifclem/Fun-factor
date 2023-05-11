@@ -8,19 +8,18 @@ public class PointDisplay : MonoBehaviour
     public static PointDisplay instance;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI scoreInTime;
-    public TextMeshProUGUI mainDisplay;
+    //public TextMeshProUGUI mainDisplay;
     public TextMeshProUGUI mainDisplay2;
     public GameObject save;
     public GameObject load;
     public bool pActive = false;
-
-    //public GameObject explosion;
-    //public Transform explo1;
+    //public Shooting Shooting;
 
 
 
-    int score = 0;
-    static int scoreIn = 0;
+
+    public int score = 0;
+    public int scoreIn = 0;
     int finalScore = 22;
 
     private void Awake()
@@ -32,9 +31,9 @@ public class PointDisplay : MonoBehaviour
     {
         scoreText.text =  "POINTS : " + score.ToString();
         scoreInTime.text = " + " + scoreIn.ToString();
-        mainDisplay.text = " TU AS FAIT : " + finalScore.ToString() + " POINTS !!";
+       // mainDisplay.text = " TU AS FAIT : " + finalScore.ToString() + " POINTS !!";
         mainDisplay2.text = "Tu est vraiment trop fort";
-        mainDisplay.enabled = false;
+        //mainDisplay.enabled = false;
         mainDisplay2.enabled = false;
 
 
@@ -46,12 +45,17 @@ public class PointDisplay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             pActive = true;
+            Cursor.lockState = CursorLockMode.Confined;
+            //Shooting.instance.
+            Cursor.visible = true;
             save.SetActive(true);
             load.SetActive(true);
         }
-        if(Input.GetKeyDown(KeyCode.P) && !pActive)
+        else if(Input.GetKeyDown(KeyCode.P) && !pActive)
         {
-           
+            pActive = false;
+            Cursor.lockState = CursorLockMode.Locked;
+           Cursor.visible = false;
             save.SetActive(false);
             load.SetActive(false);
         }
@@ -76,16 +80,27 @@ public class PointDisplay : MonoBehaviour
         scoreInTime.text = " + " + scoreIn.ToString();
     }
 
+    public void UpdateDisplay()
+    {
+        scoreText.text = score.ToString();
+        scoreInTime.text = " + " + scoreIn.ToString();
+    }
+
     public void FinalDisplay()
     {
         if(scoreIn == 22)
         {
             Debug.Log("ahahah");
-            mainDisplay.enabled = true;
+            //mainDisplay.enabled = true;
             
             FinalExplosion.instance.FinaleExplosion();
 
 
         }
+    }
+
+    public void saveScore()
+    {
+
     }
 }

@@ -13,17 +13,23 @@ public class SaveAndLoad : MonoBehaviour
     {
         Debug.Log(Application.persistentDataPath);
 
-        SaveToFile();
+       
+    }
+    private void Start()
+    {
+        LoadFile();
     }
     public void SaveToFile()
     {
         saveData.Save();
+        Debug.Log("save");
         string json = JsonUtility.ToJson(saveData);
         if (!File.Exists(Application.persistentDataPath + "/data.save"))
         {
             File.Create(Application.persistentDataPath + "/data.save").Dispose();
         }
         File.WriteAllText(Application.persistentDataPath + "/data.save", json);
+        Debug.Log(json);
     }
 
     public void LoadFile()
@@ -34,11 +40,13 @@ public class SaveAndLoad : MonoBehaviour
         {
             string json = File.ReadAllText(Application.persistentDataPath + "/data.save");
             saveData = JsonUtility.FromJson<SaveData>(json);
+            Debug.Log(json);
             saveData.Load();
         }
         else
         {
             saveData = new SaveData();
+
         }
     }
 

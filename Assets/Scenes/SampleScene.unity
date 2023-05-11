@@ -3740,7 +3740,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1698708930}
         m_TargetAssemblyTypeName: SaveAndLoad, Assembly-CSharp
-        m_MethodName: SaveToFile
+        m_MethodName: LoadFile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3941,11 +3941,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1930412325}
   scoreInTime: {fileID: 1129121365}
-  mainDisplay: {fileID: 0}
   mainDisplay2: {fileID: 199673953}
   save: {fileID: 122719093}
   load: {fileID: 1312753409}
   pActive: 0
+  score: 0
+  scoreIn: 0
 --- !u!1 &1460186359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,8 +4574,8 @@ MonoBehaviour:
   saveData:
     worldData:
       PointDisplay: {fileID: 0}
-    playerData: {fileID: 0}
-    playerPose: {x: 0, y: 0, z: 0}
+    score: 0
+    scoreIn: 0
 --- !u!4 &1698708931
 Transform:
   m_ObjectHideFlags: 0

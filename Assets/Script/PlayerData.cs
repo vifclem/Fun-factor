@@ -23,7 +23,7 @@ public class PlayerData : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(playerPosition);
+        //Debug.Log(playerPosition);
         playerPosition = transform.position;
     }
 }

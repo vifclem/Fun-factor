@@ -2,32 +2,38 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 [Serializable]
 public class SaveData
 {
     public WorldData worldData;
-    public PlayerData playerData;
-    public Vector3 playerPose;
+  
+    [NonSerialized]public PointDisplay pointDisplay;
+   
+    public int score;
+    public int scoreIn;
 
     public void Load()
     {
-        if (PlayerData.Instance != null)
+      
+        if (PointDisplay.instance != null)
         {
-            playerData = PlayerData.Instance;
-            worldData = WorldData.instance;
-            PlayerData.Instance.GoTo(playerPose);
+            pointDisplay = PointDisplay.instance;
+            pointDisplay.score = score;
+            pointDisplay.scoreIn = scoreIn;
+            pointDisplay.UpdateDisplay();
         }
     }
 
     public void Save()
     {
-        if (PlayerData.Instance != null)
+       
+        if (PointDisplay.instance != null)
         {
-            playerPose = playerData.playerPosition;
-
-
+            score = pointDisplay.score;
+            scoreIn = pointDisplay.scoreIn;
         }
     }
 

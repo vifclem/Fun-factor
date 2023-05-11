@@ -92,7 +92,7 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         readyToShoot = false;
         
