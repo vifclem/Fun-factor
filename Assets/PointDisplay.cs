@@ -43,21 +43,27 @@ public class PointDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && !pActive)
         {
             pActive = true;
+            Shooting.instance.allowInvoke = false;
+
             Cursor.lockState = CursorLockMode.Confined;
-            //Shooting.instance.
             Cursor.visible = true;
+
             save.SetActive(true);
             load.SetActive(true);
             newLevel.SetActive(true);
         }
-        else if(Input.GetKeyDown(KeyCode.P) && !pActive)
+        else if(Input.GetKeyDown(KeyCode.P) && pActive)
         {
+          
             pActive = false;
+            Shooting.instance.allowInvoke = true;
+
             Cursor.lockState = CursorLockMode.Locked;
            Cursor.visible = false;
+
             save.SetActive(false);
             load.SetActive(false);
             newLevel.SetActive(false);

@@ -33,6 +33,7 @@ public class SaveData
        
         if (PointDisplay.instance != null)
         {
+            pointDisplay = PointDisplay.instance;
             score = pointDisplay.score;
             scoreIn = pointDisplay.scoreIn;
         }
