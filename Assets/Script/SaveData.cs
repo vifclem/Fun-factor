@@ -11,9 +11,11 @@ public class SaveData
     public WorldData worldData;
   
     [NonSerialized]public PointDisplay pointDisplay;
+    [NonSerialized] public Shooting shooting;
    
     public int score;
     public int scoreIn;
+    public int bulletCount;
 
     public void Load()
     {
@@ -26,6 +28,12 @@ public class SaveData
             pointDisplay.UpdateDisplay();
             
         }
+        if (Shooting.instance != null)
+        {
+            shooting = Shooting.instance;
+            shooting.bulletsLeft = bulletCount;
+
+        }
     }
 
     public void Save()
@@ -37,6 +45,13 @@ public class SaveData
             score = pointDisplay.score;
             scoreIn = pointDisplay.scoreIn;
         }
+        if(Shooting.instance != null)
+        {
+            shooting = Shooting.instance;
+            bulletCount = shooting.bulletsLeft;
+           
+
+        }
     }
 
     public void NewScene()
@@ -44,6 +59,8 @@ public class SaveData
         pointDisplay.score = 0;
         pointDisplay.scoreIn = 0;
         pointDisplay.UpdateDisplay();
+        shooting.bulletsLeft = shooting.magazineSize;
+        
 
     }
 

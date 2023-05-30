@@ -18,7 +18,7 @@ public class Shooting : MonoBehaviour
     public int magazineSize, bulletsPerTap;
     //public bool allowButtonHold;
 
-    int bulletsLeft, bulletsShot;
+    public int bulletsLeft, bulletsShot;
 
     [Space]
     [Header("Shooting bools")]
