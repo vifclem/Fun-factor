@@ -8,7 +8,7 @@ public class PointDisplay : MonoBehaviour
     public static PointDisplay instance;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI scoreInTime;
-    //public TextMeshProUGUI mainDisplay;
+    
     public TextMeshProUGUI mainDisplay2;
     public GameObject save;
     public GameObject load;
@@ -16,8 +16,7 @@ public class PointDisplay : MonoBehaviour
     public GameObject quit;
     public GameObject sound;
     public bool pActive = false;
-    //public Shooting Shooting;
-
+    
 
 
 
@@ -29,20 +28,20 @@ public class PointDisplay : MonoBehaviour
     {
         instance = this;
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         scoreText.text =  "POINTS : " + score.ToString();
         scoreInTime.text = " + " + scoreIn.ToString();
-       // mainDisplay.text = " TU AS FAIT : " + finalScore.ToString() + " POINTS !!";
+      
         mainDisplay2.text = "Tu est vraiment trop fort";
-        //mainDisplay.enabled = false;
+       
         mainDisplay2.enabled = false;
 
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P) && !pActive)

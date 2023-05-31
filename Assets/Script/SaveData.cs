@@ -12,6 +12,7 @@ public class SaveData
   
     [NonSerialized]public PointDisplay pointDisplay;
     [NonSerialized] public Shooting shooting;
+    [Range(0f, 1f)] public float slider = 1f; 
    
     public int score;
     public int scoreIn;
@@ -44,6 +45,7 @@ public class SaveData
             pointDisplay = PointDisplay.instance;
             score = pointDisplay.score;
             scoreIn = pointDisplay.scoreIn;
+            //slider = pointDisplay.sound;
         }
         if(Shooting.instance != null)
         {
@@ -52,6 +54,8 @@ public class SaveData
            
 
         }
+
+        
     }
 
     public void NewScene()
@@ -63,6 +67,9 @@ public class SaveData
         
 
     }
+
+
+
 
 
 
