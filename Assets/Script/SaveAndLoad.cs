@@ -55,4 +55,9 @@ public class SaveAndLoad : MonoBehaviour
         saveData.NewScene();
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }

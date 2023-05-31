@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
 
     [Space]
     [Header("Shooting bools")]
-    bool shooting, readyToShoot, reloading;
+    public bool shooting, readyToShoot, reloading;
 
     [Space]
     [Header("Reference")]

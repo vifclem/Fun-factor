@@ -13,6 +13,8 @@ public class PointDisplay : MonoBehaviour
     public GameObject save;
     public GameObject load;
     public GameObject newLevel;
+    public GameObject quit;
+    public GameObject sound;
     public bool pActive = false;
     //public Shooting Shooting;
 
@@ -46,7 +48,8 @@ public class PointDisplay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) && !pActive)
         {
             pActive = true;
-            Shooting.instance.allowInvoke = false;
+            Shooting.instance.readyToShoot = false;
+            Shooting.instance.shooting = false;
 
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
@@ -54,12 +57,16 @@ public class PointDisplay : MonoBehaviour
             save.SetActive(true);
             load.SetActive(true);
             newLevel.SetActive(true);
+            quit.SetActive(true);
+            sound.SetActive(true);
+            
         }
         else if(Input.GetKeyDown(KeyCode.P) && pActive)
         {
           
             pActive = false;
-            Shooting.instance.allowInvoke = true;
+            Shooting.instance.readyToShoot = true;
+            Shooting.instance.shooting = true;
 
             Cursor.lockState = CursorLockMode.Locked;
            Cursor.visible = false;
@@ -67,6 +74,8 @@ public class PointDisplay : MonoBehaviour
             save.SetActive(false);
             load.SetActive(false);
             newLevel.SetActive(false);
+            quit.SetActive(false);
+            sound.SetActive(false);
         }
 
     }
