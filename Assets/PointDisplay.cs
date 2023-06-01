@@ -14,7 +14,7 @@ public class PointDisplay : MonoBehaviour
     public GameObject load;
     public GameObject newLevel;
     public GameObject quit;
-    public GameObject sound;
+    public GameObject volumeSlider;
     public bool pActive = false;
     
 
@@ -57,7 +57,7 @@ public class PointDisplay : MonoBehaviour
             load.SetActive(true);
             newLevel.SetActive(true);
             quit.SetActive(true);
-            sound.SetActive(true);
+            volumeSlider.SetActive(true);
             
         }
         else if(Input.GetKeyDown(KeyCode.P) && pActive)
@@ -74,7 +74,7 @@ public class PointDisplay : MonoBehaviour
             load.SetActive(false);
             newLevel.SetActive(false);
             quit.SetActive(false);
-            sound.SetActive(false);
+            volumeSlider.SetActive(false);
         }
 
     }
