@@ -44,7 +44,7 @@ public class PointDisplay : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && !pActive)
+        if (Input.GetKeyDown(KeyCode.Escape) && !pActive)
         {
             pActive = true;
             Shooting.instance.readyToShoot = false;
@@ -60,7 +60,7 @@ public class PointDisplay : MonoBehaviour
             volumeSlider.SetActive(true);
             
         }
-        else if(Input.GetKeyDown(KeyCode.P) && pActive)
+        else if(Input.GetKeyDown(KeyCode.Escape) && pActive)
         {
           
             pActive = false;

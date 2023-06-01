@@ -12,7 +12,8 @@ public class SaveData
   
     [NonSerialized]public PointDisplay pointDisplay;
     [NonSerialized] public Shooting shooting;
-    [Range(0f, 1f)] public float slider = 1f; 
+    [NonSerialized] public volumeSettings volumSettings;
+    public float slider = 1f; 
    
     public int score;
     public int scoreIn;
@@ -53,6 +54,10 @@ public class SaveData
             bulletCount = shooting.bulletsLeft;
            
 
+        }
+        if(volumeSettings.instance != null)
+        {
+          
         }
 
         

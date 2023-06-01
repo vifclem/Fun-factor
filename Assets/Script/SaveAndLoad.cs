@@ -7,7 +7,7 @@ public class SaveAndLoad : MonoBehaviour
     public static SaveAndLoad instance;
 
     public SaveData saveData;
-
+    float val;
 
     private void Awake()
     {
@@ -22,6 +22,7 @@ public class SaveAndLoad : MonoBehaviour
     public void SaveToFile()
     {
         saveData.Save();
+        //volumeSettings.SetSoundVolume();
         Debug.Log("save");
         string json = JsonUtility.ToJson(saveData);
         if (!File.Exists(Application.persistentDataPath + "/data.save"))

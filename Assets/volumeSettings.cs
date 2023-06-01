@@ -6,15 +6,16 @@ using UnityEngine.UI;
 
 public class volumeSettings : MonoBehaviour
 {
-
+    public static volumeSettings instance;
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] Slider soundSlider;
     const string mixer_sound = "SoundVolume";
     private void Awake()
     {
+        instance = this;
         soundSlider.onValueChanged.AddListener(SetSoundVolume);
     }
-    void SetSoundVolume(float value)
+    public void SetSoundVolume(float value)
     {
         audioMixer.SetFloat(mixer_sound, Mathf.Log10(value) * 20);
     }
