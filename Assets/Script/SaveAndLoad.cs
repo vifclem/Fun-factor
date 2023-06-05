@@ -1,23 +1,26 @@
 using UnityEngine;
 using System.IO;
 using System;
+using System.Collections.Generic;
 
 public class SaveAndLoad : MonoBehaviour
 {
     public static SaveAndLoad instance;
-
+    public Dictionary<string, bool> cubeExploded;
     public SaveData saveData;
     float val;
 
     private void Awake()
     {
         Debug.Log(Application.persistentDataPath);
+        
 
        
     }
     private void Start()
     {
         LoadFile();
+        cubeExploded = new Dictionary<string, bool>();
     }
     public void SaveToFile()
     {

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 
 [Serializable]
@@ -13,12 +14,23 @@ public class SaveData
     [NonSerialized]public PointDisplay pointDisplay;
     [NonSerialized] public Shooting shooting;
     [NonSerialized] public volumeSettings volumSettings;
-    public float slider = 1f; 
+    public float slider = 1f;
+    
    
     public int score;
     public int scoreIn;
     public int bulletCount;
 
+  
+   
+ 
+
+    void Start()
+    {
+       
+    }
+
+   
     public void Load()
     {
       
@@ -36,6 +48,7 @@ public class SaveData
             shooting.bulletsLeft = bulletCount;
 
         }
+        
     }
 
     public void Save()
@@ -61,6 +74,8 @@ public class SaveData
         }
 
         
+
+        
     }
 
     public void NewScene()
@@ -70,8 +85,11 @@ public class SaveData
         pointDisplay.UpdateDisplay();
         shooting.bulletsLeft = shooting.magazineSize;
         
+        
 
     }
+
+   
 
 
 
