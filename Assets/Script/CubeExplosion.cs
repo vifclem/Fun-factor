@@ -7,16 +7,21 @@ public class CubeExplosion : MonoBehaviour
     public GameObject explosion;
 
     public static CubeExplosion instance;
-
+    public int cubeLeft;
+    bool exploded = false;
+    public Vector3 cubePos;
 
     private void Awake()
     {
         instance = this;
+        cubeLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        
     }
 
     void Update()
     {
-        
+        Debug.Log(cubeLeft);
+        cubePos = transform.position;
     }
 
     void Explosion()
@@ -32,6 +37,11 @@ public class CubeExplosion : MonoBehaviour
         
     }
 
+
+    public void CubePosition0(Vector3 position)
+    {
+        cubePos = position;
+    }
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "ground")
@@ -40,13 +50,18 @@ public class CubeExplosion : MonoBehaviour
             PointDisplay.instance.AddPoints();
             PointDisplay.instance.PointCount();
             PointDisplay.instance.FinalDisplay();
+            
             Debug.Log("ha");
+            
+            
+
+            
             
             
         }
 
        
-        Invoke("Delay", 0.1f);
+        //Invoke("Delay", 0.1f);
        
     }
 

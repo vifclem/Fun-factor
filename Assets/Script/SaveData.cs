@@ -13,6 +13,7 @@ public class SaveData
   
     [NonSerialized]public PointDisplay pointDisplay;
     [NonSerialized] public Shooting shooting;
+    [NonSerialized] public CubeExplosion cubeExplosion;
     [NonSerialized] public volumeSettings volumSettings;
     public float slider = 1f;
     
@@ -20,6 +21,7 @@ public class SaveData
     public int score;
     public int scoreIn;
     public int bulletCount;
+    public Vector3 cubePosition;
 
   
    
@@ -48,6 +50,12 @@ public class SaveData
             shooting.bulletsLeft = bulletCount;
 
         }
+        if(CubeExplosion.instance != null)
+        {
+            cubeExplosion = CubeExplosion.instance;
+            cubeExplosion.cubePos = cubePosition;
+        }
+
         
     }
 
@@ -71,6 +79,12 @@ public class SaveData
         if(volumeSettings.instance != null)
         {
           
+        }
+        if(CubeExplosion.instance != null)
+        {
+            cubeExplosion = CubeExplosion.instance;
+            cubePosition = cubeExplosion.cubePos;
+            
         }
 
         
