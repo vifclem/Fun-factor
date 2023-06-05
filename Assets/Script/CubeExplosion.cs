@@ -8,7 +8,7 @@ public class CubeExplosion : MonoBehaviour
 
     public static CubeExplosion instance;
     public int cubeLeft;
-    bool exploded = false;
+    
     public Vector3 cubePos;
 
     private void Awake()
