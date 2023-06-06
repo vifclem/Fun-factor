@@ -15,13 +15,12 @@ public class CubeExplosion : MonoBehaviour
     {
         instance = this;
         cubeLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        
+        cubePos = transform.position;
     }
 
     void Update()
     {
-        Debug.Log(cubeLeft);
-        cubePos = transform.position;
+        
     }
 
     void Explosion()
@@ -37,6 +36,10 @@ public class CubeExplosion : MonoBehaviour
         
     }
 
+    void Reinit()
+    {
+        transform.position = cubePos;
+    }
 
     public void CubePosition0(Vector3 position)
     {
@@ -61,7 +64,7 @@ public class CubeExplosion : MonoBehaviour
         }
 
        
-        //Invoke("Delay", 0.1f);
+        Invoke("Delay", 0.1f);
        
     }
 

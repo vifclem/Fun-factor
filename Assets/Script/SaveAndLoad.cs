@@ -19,7 +19,7 @@ public class SaveAndLoad : MonoBehaviour
     }
     private void Start()
     {
-        LoadFile();
+        //LoadFile();
         cubeExploded = new Dictionary<string, bool>();
     }
     public void SaveToFile()

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
-
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class SaveData
@@ -15,6 +15,7 @@ public class SaveData
     [NonSerialized] public Shooting shooting;
     [NonSerialized] public CubeExplosion cubeExplosion;
     [NonSerialized] public volumeSettings volumSettings;
+    [SerializeField] private List<Vector3> cubePositions= new List<Vector3>();
     public float slider = 1f;
     
    
@@ -50,13 +51,24 @@ public class SaveData
             shooting.bulletsLeft = bulletCount;
 
         }
-        if(CubeExplosion.instance != null)
+        //if(CubeExplosion.instance != null)
+        //{
+        //    cubeExplosion = CubeExplosion.instance;
+        //    cubeExplosion.cubePos = cubePosition;
+        //}
+        CubeExplosion[] cubes = GameObject.FindObjectsOfType<CubeExplosion>();
+        Debug.Log($"Saved {cubePositions.Count} cubes");
+        if (cubePositions.Count > 0)
         {
-            cubeExplosion = CubeExplosion.instance;
-            cubeExplosion.cubePos = cubePosition;
+            for (int c = 0; c < cubePositions.Count; c++)
+            {
+                if (c < cubes.Length) cubes[c].transform.position = cubePositions[c];
+            }
+            for (int c = cubePositions.Count; c < cubes.Length; c++)
+            {
+                GameObject.Destroy(cubes[c].gameObject);
+            }
         }
-
-        
     }
 
     public void Save()
@@ -80,14 +92,18 @@ public class SaveData
         {
           
         }
-        if(CubeExplosion.instance != null)
-        {
-            cubeExplosion = CubeExplosion.instance;
-            cubePosition = cubeExplosion.cubePos;
-            
-        }
+        //if(CubeExplosion.instance != null)
+        //{
+        //    cubeExplosion = CubeExplosion.instance;
+        //    cubePosition = cubeExplosion.cubePos;
 
-        
+        //}
+        cubePositions.Clear();
+        foreach(CubeExplosion cube in GameObject.FindObjectsOfType<CubeExplosion>())
+        {
+            cubePositions.Add(cube.transform.position);
+        }
+        Debug.Log($"Saved {cubePositions.Count} cubes");
 
         
     }
@@ -98,8 +114,8 @@ public class SaveData
         pointDisplay.scoreIn = 0;
         pointDisplay.UpdateDisplay();
         shooting.bulletsLeft = shooting.magazineSize;
-        
-        
+        cubePositions.Clear();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 
